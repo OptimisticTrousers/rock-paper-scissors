@@ -210,7 +210,6 @@ let computerMove = ""
         if (playerChoice == "n" || playerChoice == "no") {
             alert("The computer made it's move! Your turn");
         }
-        return playerChoice;
     }
 
         let run = true;
@@ -221,8 +220,8 @@ let computerMove = ""
             whoGoesFirst();
             let playerInput = getPlayerMove().toLowerCase();
             if (playerInput == "rock" || playerInput == "paper" || playerInput == "scissors") {
-                alert(playRound(playerInput, computerSelection()));
-                let choice = prompt(playerName + ", Do you want to play again? y or n");
+                playRound(playerInput, computerSelection());
+                let choice = prompt(playerName + ", do you want to play again? y or n");
                 if (choice != "n" && choice != "no") {
                     continue;
                 }
@@ -234,6 +233,3 @@ let computerMove = ""
                 alert("Invalid Input " + playerInput);
             }
         } while (run);
-    
-
-computerPlay();
