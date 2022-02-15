@@ -124,6 +124,8 @@ public class RockPaperScissors
     }
 }*/
 let computerMove = ""
+let playerWins = 0
+let computerWins = 0
 
     function computerSelection() {
         let result = parseInt(Math.random() * 3.0);
@@ -154,25 +156,31 @@ let computerMove = ""
             else if (usersMove == "rock") {
                 if (computersMove == "scissors") {
                     alert("You win!! Rock crushes scissors.");
+                    playerWins++;
                 }
                 else if (computersMove == "paper") {
                     alert("You lose!! Paper eats rock.");
+                    computerWins++;
                 }
             }
             else if (usersMove == ("paper")) {
                 if (computersMove == ("rock")) {
                     alert("You win!! Paper eats rock.");
+                    playerWins++;
                 }
                 else if (computersMove == ("scissors")) {
                     alert("You lose!! Scissor cuts paper.");
+                    computerWins++;
                 }
             }
             else if (usersMove == "scissors") {
                 if (computersMove == "paper") {
                     alert("You win!! Scissor cuts paper.");
+                    playerWins++;
                 }
                 else if (computersMove == "rock") {
                     alert("You lose!! Rock breaks scissors.");
+                    computerWins++;
                 }
             }
             else {
@@ -182,14 +190,17 @@ let computerMove = ""
         else if (usersMove == "rock") {
             computersMove = "paper";
             alert("You lose! It's rigged! Paper eats rock");
+            computerWins++;
         }
         else if (usersMove == "paper") {
             computersMove = "scissors";
             alert("You lose! It's rigged! Scissors cuts paper");
+            computerWins++;
         }
         else if (usersMove == "scissors") {
             computersMove = "rock";
             alert("You lose! It's rigged! Rock crushes scissors");
+            computerWins++;
         }
     }
 
@@ -216,11 +227,13 @@ let computerMove = ""
 
         let playerName = getPlayerName();
 
+        let index = 0
         do {
             whoGoesFirst();
             let playerInput = getPlayerMove().toLowerCase();
             if (playerInput == "rock" || playerInput == "paper" || playerInput == "scissors") {
                 playRound(playerInput, computerSelection());
+                index++
                 let choice = prompt(playerName + ", do you want to play again? y or n");
                 if (choice != "n" && choice != "no") {
                     continue;
@@ -232,4 +245,7 @@ let computerMove = ""
             else {
                 alert("Invalid Input " + playerInput);
             }
-        } while (run);
+        } while (run && index < 5);
+        if(index == 5){
+            if(playerWins > computerWins)
+        }
