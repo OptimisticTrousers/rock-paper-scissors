@@ -258,6 +258,8 @@ let computerWins = 0
         }
                 let choice = prompt(playerName + ", do you want to play again? y or n");
                 if (choice != "n" && choice != "no") {
+                    computerWins = 0
+                    playerWins= 0
                     playGame();
                 }
                 else{
