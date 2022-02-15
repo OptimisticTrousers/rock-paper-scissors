@@ -125,25 +125,6 @@ public class RockPaperScissors
 }*/
 let computerMove = ""
 
-    const ROCK = "rock";
-    const PAPER = "paper";
-    const SCISSORS = "scissors";
-
-function computerPlay(){
-    let result = parseInt(Math.random()*3)  
-    console.log(result)
-
-    if(result === 0){
-        computerMove = "Rock"
-    }
-    else if(result === 1){
-        computerMove = "Paper"
-    }
-    else if(result === 2){
-        computerMove = "Scissors"
-    }
-
-}
     function computerSelection() {
         let result = parseInt(Math.random() * 3.0);
         let computerPlay = ""
@@ -212,30 +193,8 @@ function computerPlay(){
         }
     }
 
-
 //let playerResult =  prompt("Please enter 'Rock, Paper, or Scissors' : ")
 
-function firstRound(playerSelection, computerSelection){
-
-    if(playerSelection == computerSelection){
-        return "Tied! No one wins!"
-    }
-    if(playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock"){
-        return "You win! Rock beats scissors"
-    
-    }
-    else if(playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors"){
-        return "You lose! Scissors beats rock"
-    }
-    if(playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors"){
-        return "Scissors beats paper"
-    }
-    if(playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper"){
-        return "Paper beats rock!"
-    }
-
-
-}
     function getPlayerMove() {
         let playerInput = prompt("Rock, Paper, or Scissors? ");
         return playerInput;
