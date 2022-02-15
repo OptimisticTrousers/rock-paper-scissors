@@ -147,9 +147,9 @@ let computerWins = 0
         return computerPlay
     }
     function playRound(usersMove, computersMove) {
-        alert("Computer's move is: " + computersMove);
         const result = Math.random();
         if (result < 0.5) {
+        alert("Computer's move is: " + computersMove);
             if (usersMove == computersMove) {
                 alert("It's a tie!");
             }
@@ -229,13 +229,14 @@ let computerWins = 0
 
         let index = 0
         do {
-            whoGoesFirst();
+            
+            let playerChoice = whoGoesFirst();
+            while(index < 5){
             let playerInput = getPlayerMove().toLowerCase();
             if (playerInput == "rock" || playerInput == "paper" || playerInput == "scissors") {
                 playRound(playerInput, computerSelection());
                 index++
-                alert("Computer wins: " + computerWins)
-                alert("Player wins: " + playerWins)
+                alert("Computer wins: " + computerWins + " Player wins: " + playerWins)
 
                 let choice = prompt(playerName + ", do you want to play again? y or n");
                 if (choice != "n" && choice != "no") {
@@ -248,9 +249,16 @@ let computerWins = 0
             else {
                 alert("Invalid Input " + playerInput);
             }
-        } while (run && index < 5);
+        }
+        } while (run);
         if(index == 5){
             if(playerWins > computerWins){
-                alert("Player wins!")
+                alert("Player wins the round!")
+            }
+            else if(computerWins < playerWins){
+                alert("Computer wins the round!")
+            }
+            else{
+                alert("Tie round!")
             }
         }
