@@ -264,7 +264,7 @@ function firstRound(playerSelection, computerSelection){
             if (playerInput == "rock" || playerInput == "paper" || playerInput == "scissors") {
                 alert(playRound(playerInput, computerSelection()));
                 let choice = prompt(playerName + ", Do you want to play again? y or n");
-                if (!choice == "n" && !choice == "no") {
+                if (choice != "n" && choice != "no") {
                     continue;
                 }
                 else{
