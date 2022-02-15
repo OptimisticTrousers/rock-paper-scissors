@@ -228,9 +228,10 @@ let computerWins = 0
         let playerName = getPlayerName();
 
         let index = 0
+        function playGame(){
         do {
             
-            let playerChoice = whoGoesFirst();
+            //let playerChoice = whoGoesFirst();
             while(index < 5){
             let playerInput = getPlayerMove().toLowerCase();
             if (playerInput == "rock" || playerInput == "paper" || playerInput == "scissors") {
@@ -238,27 +239,32 @@ let computerWins = 0
                 index++
                 alert("Computer wins: " + computerWins + " Player wins: " + playerWins)
 
-                let choice = prompt(playerName + ", do you want to play again? y or n");
-                if (choice != "n" && choice != "no") {
-                    continue;
-                }
-                else{
-                run = false;
-                }
             }
             else {
                 alert("Invalid Input " + playerInput);
             }
         }
-        } while (run);
+        
         if(index == 5){
             if(playerWins > computerWins){
-                alert("Player wins the round!")
+                alert("Player wins the round!" + " Player wins: " + playerWins + "Computer wins: " + computerWins)
             }
-            else if(computerWins < playerWins){
-                alert("Computer wins the round!")
+            else if(computerWins > playerWins){
+                alert("Computer wins the round!" + " Player wins: " + playerWins + " Computer wins: " + computerWins)
             }
             else{
                 alert("Tie round!")
             }
         }
+                let choice = prompt(playerName + ", do you want to play again? y or n");
+                if (choice != "n" && choice != "no") {
+                    playGame();
+                }
+                else{
+                run = false;
+                }
+
+        } while (run);
+    }
+
+    playGame()
