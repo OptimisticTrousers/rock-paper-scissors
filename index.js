@@ -234,6 +234,9 @@ let computerWins = 0
             if (playerInput == "rock" || playerInput == "paper" || playerInput == "scissors") {
                 playRound(playerInput, computerSelection());
                 index++
+                alert("Computer wins: " + computerWins)
+                alert("Player wins: " + playerWins)
+
                 let choice = prompt(playerName + ", do you want to play again? y or n");
                 if (choice != "n" && choice != "no") {
                     continue;
@@ -247,5 +250,7 @@ let computerWins = 0
             }
         } while (run && index < 5);
         if(index == 5){
-            if(playerWins > computerWins)
+            if(playerWins > computerWins){
+                alert("Player wins!")
+            }
         }
