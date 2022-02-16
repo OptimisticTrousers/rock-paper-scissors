@@ -187,6 +187,7 @@ let computerWins = 0
                 alert("Invalid user input.");
             }
         }
+        
         else if (usersMove == "rock") {
             computersMove = "paper";
             alert("You lose! It's rigged! Paper eats rock");
@@ -252,13 +253,14 @@ let computerWins = 0
             else if(computerWins > playerWins){
                 alert("Computer wins the round!" + " Player wins: " + playerWins + " Computer wins: " + computerWins)
             }
-            else{
+            else if(computerWins == playerWins){
                 alert("Tie round!")
             }
         }
                 let choice = prompt(playerName + ", do you want to play again? y or n");
                 if (choice != "n" && choice != "no") {
                     computerWins = 0
+                    index = 0;
                     playerWins= 0
                     playGame();
                 }
