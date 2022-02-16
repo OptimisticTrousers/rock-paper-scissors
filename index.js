@@ -148,7 +148,7 @@ let computerWins = 0
     }
     function playRound(usersMove, computersMove) {
         const result = Math.random();
-        if (result < 0.5) {
+        //if (result < 0.5) {
         alert("Computer's move is: " + computersMove);
             if (usersMove == computersMove) {
                 alert("It's a tie!");
@@ -186,7 +186,7 @@ let computerWins = 0
             else {
                 alert("Invalid user input.");
             }
-        }
+        /*}
         
         else if (usersMove == "rock") {
             computersMove = "paper";
@@ -202,7 +202,7 @@ let computerWins = 0
             computersMove = "rock";
             alert("You lose! It's rigged! Rock crushes scissors");
             computerWins++;
-        }
+        }*/
     }
 
 //let playerResult =  prompt("Please enter 'Rock, Paper, or Scissors' : ")
