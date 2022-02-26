@@ -146,12 +146,16 @@ let computerWins = 0
         }
         return computerPlay
     }
+
+    const gameResultText = document.querySelector('div');
+
+
     function playRound(usersMove, computersMove) {
         const result = Math.random();
         //if (result < 0.5) {
         alert("Computer's move is: " + computersMove);
             if (usersMove == computersMove) {
-                alert("It's a tie!");
+                gameResultText.textContent = "It's a tie!";
             }
             else if (usersMove == "rock") {
                 if (computersMove == "scissors") {
