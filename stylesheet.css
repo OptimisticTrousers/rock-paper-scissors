@@ -28,3 +28,9 @@ button{
     justify-content: center;
     margin-top: auto;
 }
+.title{
+    text-align: center;
+}
+.wins{
+    text-align: center;
+}

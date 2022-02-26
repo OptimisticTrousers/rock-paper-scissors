@@ -150,7 +150,7 @@ let computerWins = 0
     const gameResultText = document.querySelector('div');
 
 
-    const computerMoveText = document.querySelector('h1');
+    const computerMoveText = document.querySelector('h1.result');
 
     function playRound(usersMove, computersMove) {
         const result = Math.random();
@@ -213,10 +213,14 @@ let computerWins = 0
 
 //let playerResult =  prompt("Please enter 'Rock, Paper, or Scissors' : ")
 
-    function getPlayerMove() {
-        let playerInput = prompt("Rock, Paper, or Scissors? ");
-        return playerInput;
-    }
+        const btn = document.querySelectorAll('button');
+
+        btn.forEach(button => {
+            button.addEventListener('click', () => {
+                playerInput = button.textContent;
+            })
+        })
+
     
     function getPlayerName() {
         let playerName = prompt("Please enter your name: ");
@@ -240,15 +244,14 @@ let computerWins = 0
             
             //let playerChoice = whoGoesFirst();
             while(index < 5){
-            let playerInput = getPlayerMove().toLowerCase();
-            if (playerInput == "rock" || playerInput == "paper" || playerInput == "scissors") {
+            if (playerInput == "Rock" || playerInput == "Paper" || playerInput == "Scissors") {
                 playRound(playerInput, computerSelection());
                 index++
                 alert("Computer wins: " + computerWins + " Player wins: " + playerWins)
 
             }
             else {
-                alert("Invalid Input " + playerInput);
+                gameResultText.textContent = "Invalid Input " + playerInput;
             }
         }
         
@@ -273,6 +276,7 @@ let computerWins = 0
                 else{
                 run = false;
                 }
+        run = false;
 
         } while (run);
     }
