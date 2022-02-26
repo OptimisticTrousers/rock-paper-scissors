@@ -1,40 +1,41 @@
-    let computerMove = ""
     let playerWins = 0
+
     let computerWins = 0
+
+    let index = 0;
+
+    let run = true;
+
+
+    const parentMoveDiv = document.querySelector('.gameMoves');
+    const playerMoveText = parentMoveDiv.firstElementChild;
+    const computerMoveText = parentMoveDiv.lastElementChild;
 
     const gameResultText = document.querySelector('div.result > h2');
 
-    const parentMoveDiv = document.querySelector('.gameMoves');
-    const computerMoveText = parentMoveDiv.lastElementChild;
-    const playerMoveText = parentMoveDiv.firstElementChild;
+    const winResult = document.querySelector('.wins');
+    const playerWinsText = winResult.firstElementChild
+    const computerWinsText = winResult.lastElementChild
 
+    const playerContinueChoice = document.createElement('h3');
 
-        let run = true;
+    const resultParentDiv = document.querySelector('div.result');
 
-        let index = 0
+    const roundResult = document.createElement('h2')
 
-        const winResult = document.querySelector('.wins');
-        const playerWinsText = winResult.firstElementChild
-        const computerWinsText = winResult.lastElementChild
+    const parentRoundResultDiv = document.querySelector('.round-winner');
 
-        const roundResult = document.createElement('h2')
-        const parentRoundResultDiv = document.querySelector('.round-winner');
+    const btn = document.querySelectorAll('button');
 
-        const playerContinueChoice = document.createElement('h3');
+    btn.forEach(button => {
+        button.addEventListener('click', () => {
 
-
-        const resultParentDiv = document.querySelector('div.result');
-
-        const btn = document.querySelectorAll('button');
-
-        btn.forEach(button => {
-            button.addEventListener('click', () => {
-
-                playGame(button.textContent.toLowerCase());
-            })
+            playGame(button.textContent.toLowerCase());
         })
+    })
 
     function computerSelection() {
+
         let result = parseInt(Math.random() * 3.0);
         let computerPlay = ""
         switch (result) {
@@ -109,19 +110,14 @@
             }
     }
 
-
         function playGame(playerInput){
 
             if (playerInput == "rock" || playerInput == "paper" || playerInput == "scissors") {
 
-                gameResultText.textContent = "Result: " + playRound(playerInput.toLowerCase(), computerSelection());
-                index++;
+                gameResultText.textContent = "Game Result: " + playRound(playerInput.toLowerCase(), computerSelection());
                 playerWinsText.textContent = `Player Wins: ${playerWins}`;
                 computerWinsText.textContent = `Computer Wins: ${computerWins}`;
-            }
-            else {
-
-                gameResultText.textContent = "Invalid Input " + playerInput;
+                index++;
             }
         }
         
