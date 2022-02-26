@@ -250,7 +250,7 @@ let computerWins = 0
         btn.forEach(button => {
             button.addEventListener('click', () => {
 
-                playGame(button.textContent);
+                playGame(button.textContent.toLowerCase());
             })
         })
 
@@ -270,7 +270,7 @@ let computerWins = 0
             }
         }
         
-        if(index == 0){
+        if(index == 10){
             if(playerWins > computerWins){
                 roundResult.textContent = "Player wins the round!" + " Player wins: " + playerWins + "Computer wins: " + computerWins;
             }
