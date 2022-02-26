@@ -150,45 +150,47 @@ let computerWins = 0
     const gameResultText = document.querySelector('div');
 
 
+    const computerMoveText = document.querySelector('h1');
+
     function playRound(usersMove, computersMove) {
         const result = Math.random();
         //if (result < 0.5) {
-        alert("Computer's move is: " + computersMove);
+        computerMoveText.textContent = "Computer's move is: " + computersMove;
             if (usersMove == computersMove) {
                 gameResultText.textContent = "It's a tie!";
             }
             else if (usersMove == "rock") {
                 if (computersMove == "scissors") {
-                    alert("You win!! Rock crushes scissors.");
+                    gameResultText.textContent = "You win!! Rock crushes scissors.";
                     playerWins++;
                 }
                 else if (computersMove == "paper") {
-                    alert("You lose!! Paper eats rock.");
+                    gameResultText.textContent = "You lose!! Paper eats rock.";
                     computerWins++;
                 }
             }
             else if (usersMove == ("paper")) {
                 if (computersMove == ("rock")) {
-                    alert("You win!! Paper eats rock.");
+                    gameResultText.textContent = "You win!! Paper eats rock.";
                     playerWins++;
                 }
                 else if (computersMove == ("scissors")) {
-                    alert("You lose!! Scissor cuts paper.");
+                    gameResultText.textContent = "You lose!! Scissor cuts paper.";
                     computerWins++;
                 }
             }
             else if (usersMove == "scissors") {
                 if (computersMove == "paper") {
-                    alert("You win!! Scissor cuts paper.");
+                    gameResultText.textContent = "You win!! Scissor cuts paper.";
                     playerWins++;
                 }
                 else if (computersMove == "rock") {
-                    alert("You lose!! Rock breaks scissors.");
+                    gameResultText.textContent = "You lose!! Rock breaks scissors.";
                     computerWins++;
                 }
             }
             else {
-                alert("Invalid user input.");
+                gameResultText.textContent = "Invalid user input.";
             }
         /*}
         
