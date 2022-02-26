@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:auto;
+    gap: 1rem;
+}
+footer{
+    display:flex;
+    justify-content:center;
+    margin-top:auto;
+}
+
+button{
+    padding: 100px;
+    box-shadow: 1rem;
+    border: 2px solid black;
+    border-radius: 5px;
+}
