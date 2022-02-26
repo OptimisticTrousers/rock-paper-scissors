@@ -147,7 +147,7 @@ let computerWins = 0
         return computerPlay
     }
 
-    const gameResultText = document.createElement('h2');
+    const gameResultText = document.querySelector('div.result > h2');
 
     const parentMoveDiv = document.querySelector('.gameMoves');
     const computerMoveText = parentMoveDiv.lastElementChild;
@@ -234,29 +234,32 @@ let computerWins = 0
         let index = 0
 
         const winResult = document.querySelector('.wins');
-        console.log({winResult})
         const playerWinsText = winResult.firstElementChild
         const computerWinsText = winResult.lastElementChild
+
+        const roundResult = document.createElement('h2')
+        const parentRoundResultDiv = document.querySelector('.round-winner');
+
+        const playerContinueChoice = document.createElement('h3');
 
 
         const resultParentDiv = document.querySelector('div.result');
 
-        let playerInput =""
-
         const btn = document.querySelectorAll('button');
 
         btn.forEach(button => {
-            button.addEventListener('click', playGame(button))
+            button.addEventListener('click', () => {
+
+                playGame(button.textContent);
+            })
         })
 
-        function playGame(button){
-        do {
-            
-            playerInput = button.textContent;
+        function playGame(playerInput){
+
+            console.log(playerInput)
             //let playerChoice = whoGoesFirst();
-            while(index < 5){
-            if (playerInput == "Rock" || playerInput == "Paper" || playerInput == "Scissors") {
-                gameResultText.textContent = playRound(playerInput.toLowerCase(), computerSelection());
+            if (playerInput == "rock" || playerInput == "paper" || playerInput == "scissors") {
+                gameResultText.textContent = "Result: " + playRound(playerInput.toLowerCase(), computerSelection());
                 index++
                 playerWinsText.textContent = `Player Wins: ${playerWins}` 
                 computerWinsText.textContent = `Computer Wins: ${computerWins}` 
@@ -265,21 +268,20 @@ let computerWins = 0
             else {
                 gameResultText.textContent = "Invalid Input " + playerInput;
             }
-            resultParentDiv.appendChild(gameResultText);
         }
         
-        if(index == 5){
+        if(index == 0){
             if(playerWins > computerWins){
-                alert("Player wins the round!" + " Player wins: " + playerWins + "Computer wins: " + computerWins)
+                roundResult.textContent = "Player wins the round!" + " Player wins: " + playerWins + "Computer wins: " + computerWins;
             }
             else if(computerWins > playerWins){
-                alert("Computer wins the round!" + " Player wins: " + playerWins + " Computer wins: " + computerWins)
+                roundResult.textContent = "Computer wins the round!" + " Player wins: " + playerWins + " Computer wins: " + computerWins;
             }
             else if(computerWins == playerWins){
-                alert("Tie round!")
+                roundResult.textContent = "Tie round!"
             }
         }
-                let choice = prompt(playerName + ", do you want to play again? y or n");
+                let choice = playerContinueChoice.textContent = "Do you want to play again? y or n"
                 if (choice != "n" && choice != "no") {
                     computerWins = 0
                     index = 0;
@@ -291,7 +293,6 @@ let computerWins = 0
                 }
         run = false;
 
-        } while (run);
-    }
 
-    playGame()
+        parentRoundResultDiv.appendChild(roundResult);
+        
