@@ -147,50 +147,52 @@ let computerWins = 0
         return computerPlay
     }
 
-    const gameResultText = document.querySelector('div');
+    const gameResultText = document.createElement('h2');
 
-
-    const computerMoveText = document.querySelector('h1.result');
+    const parentMoveDiv = document.querySelector('.gameMoves');
+    const computerMoveText = parentMoveDiv.lastElementChild;
+    const playerMoveText = parentMoveDiv.firstElementChild;
 
     function playRound(usersMove, computersMove) {
         const result = Math.random();
         //if (result < 0.5) {
         computerMoveText.textContent = "Computer's move is: " + computersMove;
+        playerMoveText.textContent = "Player's move is: " + usersMove;
             if (usersMove == computersMove) {
-                gameResultText.textContent = "It's a tie!";
+                return "It's a tie!";
             }
             else if (usersMove == "rock") {
                 if (computersMove == "scissors") {
-                    gameResultText.textContent = "You win!! Rock crushes scissors.";
                     playerWins++;
+                    return "You win!! Rock crushes scissors.";
                 }
                 else if (computersMove == "paper") {
-                    gameResultText.textContent = "You lose!! Paper eats rock.";
                     computerWins++;
+                    return "You lose!! Paper eats rock.";
                 }
             }
             else if (usersMove == ("paper")) {
                 if (computersMove == ("rock")) {
-                    gameResultText.textContent = "You win!! Paper eats rock.";
                     playerWins++;
+                    return "You win!! Paper eats rock.";
                 }
                 else if (computersMove == ("scissors")) {
-                    gameResultText.textContent = "You lose!! Scissor cuts paper.";
                     computerWins++;
+                    return "You lose!! Scissor cuts paper.";
                 }
             }
             else if (usersMove == "scissors") {
                 if (computersMove == "paper") {
-                    gameResultText.textContent = "You win!! Scissor cuts paper.";
                     playerWins++;
+                    return "You win!! Scissor cuts paper.";
                 }
                 else if (computersMove == "rock") {
-                    gameResultText.textContent = "You lose!! Rock breaks scissors.";
                     computerWins++;
+                    return "You lose!! Rock breaks scissors.";
                 }
             }
             else {
-                gameResultText.textContent = "Invalid user input.";
+                return "Invalid user input.";
             }
         /*}
         
@@ -213,13 +215,6 @@ let computerWins = 0
 
 //let playerResult =  prompt("Please enter 'Rock, Paper, or Scissors' : ")
 
-        const btn = document.querySelectorAll('button');
-
-        btn.forEach(button => {
-            button.addEventListener('click', () => {
-                playerInput = button.textContent;
-            })
-        })
 
     
     function getPlayerName() {
@@ -236,23 +231,41 @@ let computerWins = 0
 
         let run = true;
 
-        let playerName = getPlayerName();
-
         let index = 0
-        function playGame(){
+
+        const winResult = document.querySelector('.wins');
+        console.log({winResult})
+        const playerWinsText = winResult.firstElementChild
+        const computerWinsText = winResult.lastElementChild
+
+
+        const resultParentDiv = document.querySelector('div.result');
+
+        let playerInput =""
+
+        const btn = document.querySelectorAll('button');
+
+        btn.forEach(button => {
+            button.addEventListener('click', playGame(button))
+        })
+
+        function playGame(button){
         do {
             
+            playerInput = button.textContent;
             //let playerChoice = whoGoesFirst();
             while(index < 5){
             if (playerInput == "Rock" || playerInput == "Paper" || playerInput == "Scissors") {
-                playRound(playerInput, computerSelection());
+                gameResultText.textContent = playRound(playerInput.toLowerCase(), computerSelection());
                 index++
-                alert("Computer wins: " + computerWins + " Player wins: " + playerWins)
+                playerWinsText.textContent = `Player Wins: ${playerWins}` 
+                computerWinsText.textContent = `Computer Wins: ${computerWins}` 
 
             }
             else {
                 gameResultText.textContent = "Invalid Input " + playerInput;
             }
+            resultParentDiv.appendChild(gameResultText);
         }
         
         if(index == 5){
