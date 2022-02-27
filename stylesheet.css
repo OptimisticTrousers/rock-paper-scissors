@@ -37,3 +37,10 @@ button{
 .gameMoves{
     text-align: center;
 }
+.player-choice{
+    display: flex;
+    justify-content: center;
+}
+.round-winner{
+   text-align: center; 
+}

@@ -2,8 +2,6 @@
 
     let computerWins = 0
 
-    let index = 0;
-
     let run = true;
 
 
@@ -12,20 +10,17 @@
     const computerMoveText = parentMoveDiv.lastElementChild;
 
     const gameResultText = document.querySelector('div.result > h2');
+    const resultParentDiv = document.querySelector('div.result');
 
     const winResult = document.querySelector('.wins');
     const playerWinsText = winResult.firstElementChild
     const computerWinsText = winResult.lastElementChild
 
+    const parentRoundResultDiv = document.querySelector('.round-winner');
+    const roundResult = document.createElement('h2')
     const playerContinueChoice = document.createElement('h3');
 
-    const resultParentDiv = document.querySelector('div.result');
-
-    const roundResult = document.createElement('h2')
-
-    const parentRoundResultDiv = document.querySelector('.round-winner');
-
-    const btn = document.querySelectorAll('button');
+    const btn = document.querySelectorAll('main > button');
 
     btn.forEach(button => {
         button.addEventListener('click', () => {
@@ -38,20 +33,23 @@
 
         let result = parseInt(Math.random() * 3.0);
         let computerPlay = ""
+
         switch (result) {
+
             case 0: 
+
                 computerPlay = "rock";
                 break;
-            
             case 1: 
+
                 computerPlay = "paper";
                 break;
-            
             case 2: 
+
                 computerPlay= "scissors";
                 break;
-            
         }
+
         return computerPlay
     }
 
@@ -104,28 +102,19 @@
                     return "You lose!! Rock breaks scissors.";
                 }
             }
-            else {
-
-                return "Invalid user input.";
-            }
     }
 
         function playGame(playerInput){
 
-            if (playerInput == "rock" || playerInput == "paper" || playerInput == "scissors") {
-
                 gameResultText.textContent = "Game Result: " + playRound(playerInput.toLowerCase(), computerSelection());
                 playerWinsText.textContent = `Player Wins: ${playerWins}`;
                 computerWinsText.textContent = `Computer Wins: ${computerWins}`;
-                index++;
-            }
-        }
-        
-        if(index == 10){
+
+        if(playerWins == 5 | computerWins == 5){
 
             if(playerWins > computerWins){
 
-                roundResult.textContent = "Player wins the round!" + " Player wins: " + playerWins + "Computer wins: " + computerWins;
+                roundResult.textContent = "Player wins the round!" + " Player wins: " + playerWins + " Computer wins: " + computerWins;
             }
             else if(computerWins > playerWins){
 
@@ -136,7 +125,7 @@
                 roundResult.textContent = "Tie round!";
             }
         }
-                let choice = playerContinueChoice.textContent = "Do you want to play again? y or n"
+                playerContinueChoice.textContent = "Do you want to play again? y or n"
 
                 if (choice != "n" && choice != "no") {
 
@@ -149,7 +138,8 @@
 
                 run = false;
                 }
-        run = false;
+        }
+        
 
         parentRoundResultDiv.appendChild(roundResult);
         
