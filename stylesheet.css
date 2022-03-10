@@ -9,6 +9,9 @@ main{
     align-items: center;
     margin-top:auto;
     gap: 1rem;
+    box-shadow: 2rem;
+    border-width: 1rem;
+    border-radius: 5px;
 }
 footer{
     display:flex;
@@ -16,11 +19,12 @@ footer{
     margin-top:auto;
 }
 
-button{
-    padding: 100px;
+.button-1, .button-2, .button-3{
+    padding: 3rem 6rem;
     box-shadow: 1rem;
     border: 2px solid black;
     border-radius: 5px;
+
 }
 
 .result{
@@ -30,12 +34,20 @@ button{
 }
 .title{
     text-align: center;
+    color:white;
+    background-color: gray;
+    font-family: soleil, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
 }
 .wins{
     text-align: center;
 }
 .gameMoves{
     text-align: center;
+    flex-direction: column;
+    justify-content: center;
 }
 .player-choice{
     display: flex;
