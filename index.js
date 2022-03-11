@@ -55,9 +55,6 @@
 
     function playRound(usersMove, computersMove) {
 
-        console.log(computersMove)
-        console.log(usersMove)
-
         computerMoveText.textContent = "Computer's move is: " + computersMove;
 
         playerMoveText.textContent = "Player's move is: " + usersMove;
@@ -109,8 +106,20 @@
 
         function playGame(playerInput){
 
+            const img = document.createElement('img')
+
+            img.src = "minecraftHeart.png";
+
+
+            img.style.width="50px";
+            img.style.height="50px";
+            img.style.mixBlendMode = "multiply";
+            img.style.filter="brightness(1.75)"
+
+            //https://stackoverflow.com/questions/6289592/transparent-background-color-in-image helped with a transparent png
+
                 gameResultText.textContent = "Game Result: " + playRound(playerInput.toLowerCase(), computerSelection());
-                playerWinsText.textContent = `Player Wins: ${playerWins}`;
+                playerWinsText.appendChild(img);
                 computerWinsText.textContent = `Computer Wins: ${computerWins}`;
 
         if(playerWins == 5 | computerWins == 5){

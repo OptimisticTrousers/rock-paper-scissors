@@ -44,7 +44,7 @@ footer{
 .button-1, .button-2, .button-3{
     display:flex;
     font-family: Minecraftia;
-    padding: 1rem 4rem;
+    padding: 3rem 4rem 0.5rem;
     box-shadow: 1rem;
     flex-direction: column;
     border: 2px solid black;
@@ -61,6 +61,7 @@ footer{
     transition: all 0.5 ease-out;
     background-color: gray;
     color: white;
+    text-shadow: 6px 6px #000000;
     cursor:pointer;
 }
 
@@ -80,13 +81,15 @@ footer{
     text-shadow: 6px 6px #FFFFFF;
     font-weight: 200;
     font-family: 'Minecraft', sans-serif;
-    font-size: 100px;
+    font-size: 75px;
 
 }
 .wins{
     text-align: center;
-    color:white;
+    color: black;
     font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 1rem;
 }
 .gameMoves{
     text-align: center;
