@@ -2,9 +2,6 @@
 
     let computerWins = 0
 
-    let run = true;
-
-
     const parentMoveDiv = document.querySelector('.gameMoves');
     const playerMoveText = parentMoveDiv.firstElementChild;
     const computerMoveText = parentMoveDiv.lastElementChild;
@@ -72,13 +69,15 @@
 
             const img = document.createElement('img')
 
-            img.src = "minecraftHeart.png";
+            img.src = "/images/minecraft-heart.png";
 
 
             img.style.width="50px";
             img.style.height="50px";
             img.style.mixBlendMode = "multiply";
             img.style.filter="brightness(1.75)"
+            
+            //https://stackoverflow.com/questions/6289592/transparent-background-color-in-image helped with a transparent png
 
             if (usersMove == computersMove) {
 
@@ -133,8 +132,6 @@
 
         function playGame(playerInput){
 
-            //https://stackoverflow.com/questions/6289592/transparent-background-color-in-image helped with a transparent png
-
                 gameResultText.textContent = "Game Result: " + playRound(playerInput.toLowerCase(), computerSelection());
 
         if(playerWins == 5 | computerWins == 5){
@@ -158,19 +155,6 @@
             computerWins = 0;
             playerWins = 0;
         }
-                //playerContinueChoice.textContent = "Do you want to play again? y or n"
-
-                //if (choice != "n" && choice != "no") {
-
-                    //computerWins = 0
-                    //index = 0;
-                    //playerWins= 0
-                    //playGame();
-                //}
-                //else{
-
-                //run = false;
-                //}
         }
         
 

@@ -52,9 +52,7 @@ footer{
     border-radius: 5px;
     background-color: lightskyblue;
     font-size: 3rem;
-
 }
-
 
 .button-1:hover, .button-2:hover, .button-3:hover{
 
@@ -107,22 +105,15 @@ footer{
     color:white;
     font-size: 16px;
 }
+
 /*https://stackoverflow.com/questions/16771225/css3-rotate-animation where I got rotation info*/
+
 .github-logo{
     overflow: hidden;
     transition-duration: 1s;
     transition-property:transform;
 }
 .github-logo:hover{
-/*-webkit-animation: swing 1s ease;
-animation: swing 1s ease;
--webkit-animation-iteration-count: 1;
-animation-iteration-count: 1;
-animation: bounce 2.5s infinite;
--webkit-animation: bounce 2.5s infinite;
--moz-animation: bounce 2.5s infinite;
--o-animation: bounce 2.5s infinite;
-*/
 
 transform:rotate(360deg);
 }
