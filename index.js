@@ -69,7 +69,7 @@
 
             const img = document.createElement('img')
 
-            img.src = "/images/minecraft-heart.png";
+            img.src = "images/minecraft-heart.png";
 
 
             img.style.width="50px";
