@@ -25,7 +25,7 @@
     btn.forEach(button => {
         button.addEventListener('click', () => {
 
-            playGame(button.textContent.toLowerCase());
+            playGame(button.innerText);
         })
     })
 
@@ -54,6 +54,9 @@
     }
 
     function playRound(usersMove, computersMove) {
+
+        console.log(computersMove)
+        console.log(usersMove)
 
         computerMoveText.textContent = "Computer's move is: " + computersMove;
 
@@ -125,19 +128,19 @@
                 roundResult.textContent = "Tie round!";
             }
         }
-                playerContinueChoice.textContent = "Do you want to play again? y or n"
+                //playerContinueChoice.textContent = "Do you want to play again? y or n"
 
-                if (choice != "n" && choice != "no") {
+                //if (choice != "n" && choice != "no") {
 
-                    computerWins = 0
-                    index = 0;
-                    playerWins= 0
-                    playGame();
-                }
-                else{
+                    //computerWins = 0
+                    //index = 0;
+                    //playerWins= 0
+                    //playGame();
+                //}
+                //else{
 
-                run = false;
-                }
+                //run = false;
+                //}
         }
         
 

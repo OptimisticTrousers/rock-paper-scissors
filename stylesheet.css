@@ -11,6 +11,17 @@ body{
     font-family: Minecraftia;
 }
 
+video{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    filter: brightness(1.2);
+    z-index: -2;
+}
+
 main{
     display:flex;
     margin-top:auto;
@@ -33,14 +44,17 @@ footer{
 .button-1, .button-2, .button-3{
     display:flex;
     font-family: Minecraftia;
-    padding: 2rem 4rem;
+    padding: 1rem 4rem;
     box-shadow: 1rem;
+    flex-direction: column;
     border: 2px solid black;
+    align-items: center;
     border-radius: 5px;
-    background-color: coral;
+    background-color: lightskyblue;
     font-size: 3rem;
 
 }
+
 
 .button-1:hover, .button-2:hover, .button-3:hover{
 
@@ -54,6 +68,8 @@ footer{
     display: flex;
     justify-content: center;
     margin-top: auto;
+    color:white;
+    font-size: 16px;
 }
 .title{
     text-align: center;
@@ -61,18 +77,23 @@ footer{
     margin: 0;
     background-color: black;
     padding: 1rem 2rem;
-    font-weight: 300;
+    text-shadow: 6px 6px #FFFFFF;
+    font-weight: 200;
     font-family: 'Minecraft', sans-serif;
-    font-style: normal;
+    font-size: 100px;
 
 }
 .wins{
     text-align: center;
+    color:white;
+    font-size: 16px;
 }
 .gameMoves{
     text-align: center;
     flex-direction: column;
     justify-content: center;
+    color:white;
+    font-size: 16px;
 }
 .player-choice{
     display: flex;
@@ -80,4 +101,26 @@ footer{
 }
 .round-winner{
    text-align: center; 
+    color:white;
+    font-size: 16px;
+}
+/*https://stackoverflow.com/questions/16771225/css3-rotate-animation where I got rotation info*/
+.github-logo{
+    overflow: hidden;
+    transition-duration: 1s;
+    transition-property:transform;
+}
+.github-logo:hover{
+/*-webkit-animation: swing 1s ease;
+animation: swing 1s ease;
+-webkit-animation-iteration-count: 1;
+animation-iteration-count: 1;
+animation: bounce 2.5s infinite;
+-webkit-animation: bounce 2.5s infinite;
+-moz-animation: bounce 2.5s infinite;
+-o-animation: bounce 2.5s infinite;
+*/
+
+transform:rotate(360deg);
+
 }
