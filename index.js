@@ -128,6 +128,10 @@
 
         if(playerWins == 5 | computerWins == 5){
 
+            const modal = document.querySelector('.modal');
+
+            modal.style.display = "block";
+
             if(playerWins > computerWins){
 
                 roundResult.textContent = "Player wins the round!" + " Player wins: " + playerWins + " Computer wins: " + computerWins;
@@ -139,6 +143,7 @@
             else if(computerWins == playerWins){
 
                 roundResult.textContent = "Tie round!";
+
             }
         }
                 //playerContinueChoice.textContent = "Do you want to play again? y or n"
