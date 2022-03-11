@@ -59,53 +59,6 @@
 
         playerMoveText.textContent = "Player's move is: " + usersMove;
 
-            if (usersMove == computersMove) {
-
-                return "It's a tie!";
-            }
-            else if (usersMove == "rock") {
-
-                if (computersMove == "scissors") {
-
-                    playerWins++;
-                    return "You win!! Rock crushes scissors.";
-                }
-                else if (computersMove == "paper") {
-
-                    computerWins++;
-                    return "You lose!! Paper eats rock.";
-                }
-            }
-            else if (usersMove == ("paper")) {
-
-                if (computersMove == ("rock")) {
-
-                    playerWins++;
-                    return "You win!! Paper eats rock.";
-                }
-                else if (computersMove == ("scissors")) {
-
-                    computerWins++;
-                    return "You lose!! Scissor cuts paper.";
-                }
-            }
-            else if (usersMove == "scissors") {
-
-                if (computersMove == "paper") {
-
-                    playerWins++;
-                    return "You win!! Scissor cuts paper.";
-                }
-                else if (computersMove == "rock") {
-
-                    computerWins++;
-                    return "You lose!! Rock breaks scissors.";
-                }
-            }
-    }
-
-        function playGame(playerInput){
-
             const img = document.createElement('img')
 
             img.src = "minecraftHeart.png";
@@ -116,11 +69,62 @@
             img.style.mixBlendMode = "multiply";
             img.style.filter="brightness(1.75)"
 
+            if (usersMove == computersMove) {
+
+                return "It's a tie!";
+            }
+            else if (usersMove == "rock") {
+
+                if (computersMove == "scissors") {
+
+                    playerWins++;
+                    playerWinsText.appendChild(img);
+                    return "You win!! Rock crushes scissors.";
+                }
+                else if (computersMove == "paper") {
+
+                    computerWins++;
+                    computerWinsText.appendChild(img);
+                    return "You lose!! Paper eats rock.";
+                }
+            }
+            else if (usersMove == ("paper")) {
+
+                if (computersMove == ("rock")) {
+
+                    playerWins++;
+                    playerWinsText.appendChild(img);
+                    return "You win!! Paper eats rock.";
+                }
+                else if (computersMove == ("scissors")) {
+
+                    computerWins++;
+                    computerWinsText.appendChild(img);
+                    return "You lose!! Scissor cuts paper.";
+                }
+            }
+            else if (usersMove == "scissors") {
+
+                if (computersMove == "paper") {
+
+                    playerWins++;
+                    playerWinsText.appendChild(img);
+                    return "You win!! Scissor cuts paper.";
+                }
+                else if (computersMove == "rock") {
+
+                    computerWins++;
+                    computerWinsText.appendChild(img);
+                    return "You lose!! Rock breaks scissors.";
+                }
+            }
+    }
+
+        function playGame(playerInput){
+
             //https://stackoverflow.com/questions/6289592/transparent-background-color-in-image helped with a transparent png
 
                 gameResultText.textContent = "Game Result: " + playRound(playerInput.toLowerCase(), computerSelection());
-                playerWinsText.appendChild(img);
-                computerWinsText.textContent = `Computer Wins: ${computerWins}`;
 
         if(playerWins == 5 | computerWins == 5){
 
