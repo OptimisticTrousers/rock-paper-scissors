@@ -146,16 +146,34 @@ transform:rotate(360deg);
     flex-direction: column;
     padding: 20px;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 300px;
-    height: 100px;
+    height: 200px;
     background-color: white;
     transform: translateY(0);
     transition-timing-function: ease-out;
     text-align: center;
+    align-items: center;
+}
+.modal img{
+
+    mix-blend-mode: multiply;
+    width:50%;
+    filter: brightness(1.25);
+    border: 1px solid black;
+    margin-top: auto;
+    
 }
 .gameover-button{
     padding: 1rem 2rem;
     margin: 0 auto;
+    border-radius: 6px;
+    border: 2px solid green;
+
+    margin-top: auto;
+    background-color: green;
+    color:white;
+    font-family: Minecraftia;
 
 }
+
