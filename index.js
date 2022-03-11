@@ -22,12 +22,22 @@
 
     const btn = document.querySelectorAll('main > button');
 
+    const gameOverButton = document.querySelector('.gameover-button');
+
+    const modal = document.querySelector('.modal');
+
+    gameOverButton.addEventListener('click', () => {
+
+        location.reload();
+    })
+
     btn.forEach(button => {
         button.addEventListener('click', () => {
 
             playGame(button.innerText);
         })
     })
+
 
     function computerSelection() {
 
@@ -52,6 +62,7 @@
 
         return computerPlay
     }
+
 
     function playRound(usersMove, computersMove) {
 
@@ -128,8 +139,6 @@
 
         if(playerWins == 5 | computerWins == 5){
 
-            const modal = document.querySelector('.modal');
-
             modal.style.display = "block";
 
             if(playerWins > computerWins){
@@ -145,6 +154,9 @@
                 roundResult.textContent = "Tie round!";
 
             }
+
+            computerWins = 0;
+            playerWins = 0;
         }
                 //playerContinueChoice.textContent = "Do you want to play again? y or n"
 
