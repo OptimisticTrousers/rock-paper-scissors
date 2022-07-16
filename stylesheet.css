@@ -73,14 +73,13 @@ footer{
 .title{
     text-align: center;
     color:gray;
-    margin: 0;
     background-color: black;
     padding: 1rem 2rem;
-    margin-right: 1rem;
+    margin: 2rem;
     text-shadow: 6px 6px #FFFFFF;
     font-weight: 200;
     font-family: Minecraftia, sans-serif;
-    font-size: auto;
+    font-size: 3rem;
 
 }
 .wins{
