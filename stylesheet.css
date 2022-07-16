@@ -76,10 +76,11 @@ footer{
     margin: 0;
     background-color: black;
     padding: 1rem 2rem;
+    margin-right: 1rem;
     text-shadow: 6px 6px #FFFFFF;
     font-weight: 200;
     font-family: Minecraftia, sans-serif;
-    font-size: 75px;
+    font-size: auto;
 
 }
 .wins{
