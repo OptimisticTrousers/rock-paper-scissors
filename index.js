@@ -81,7 +81,7 @@
 
             if (usersMove == computersMove) {
 
-                return "It's a tie!";
+                return `It's a tie! You both selected ${usersMove.charAt(0).toUpperCase() + usersMove.slice(1)}!`;
             }
             else if (usersMove == "rock") {
 
@@ -95,7 +95,7 @@
 
                     computerWins++;
                     computerWinsText.appendChild(img);
-                    return "You lose!! Paper eats rock.";
+                    return "You lose! Paper eats rock.";
                 }
             }
             else if (usersMove == ("paper")) {
@@ -110,7 +110,7 @@
 
                     computerWins++;
                     computerWinsText.appendChild(img);
-                    return "You lose!! Scissor cuts paper.";
+                    return "You lose! Scissor cuts paper.";
                 }
             }
             else if (usersMove == "scissors") {
@@ -125,7 +125,7 @@
 
                     computerWins++;
                     computerWinsText.appendChild(img);
-                    return "You lose!! Rock breaks scissors.";
+                    return "You lose! Rock breaks scissors.";
                 }
             }
     }
