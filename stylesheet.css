@@ -140,6 +140,7 @@ footer {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
   transition: 200ms ease-in-out;
+  animation: scale-down 0.1s;
 }
 .modal-content {
   display: flex;
@@ -182,6 +183,16 @@ footer {
 
 .modal p {
   font-size: 24px;
+}
+
+@keyframes scale-down {
+  0% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media screen and (max-width: 550px) {
